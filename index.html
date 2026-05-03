@@ -1,96 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>DropStyle - En Desarrollo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Fuente elegante -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>DropStyle - En Desarrollo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .container {
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 60px 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.03);
-            box-shadow: 0 0 40px rgba(255,255,255,0.05);
-            max-width: 600px;
-        }
+<style>
 
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-        h1 span {
-            font-weight: 300;
-        }
+body{
+background:#000;
+color:#fff;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
 
-        .line {
-            width: 60px;
-            height: 2px;
-            background: #fff;
-            margin: 20px auto;
-            opacity: 0.5;
-        }
+main{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+text-align:center;
+}
 
-        p {
-            font-size: 1.1rem;
-            opacity: 0.7;
-            margin-bottom: 30px;
-        }
+.container{
+border:1px solid rgba(255,255,255,0.1);
+padding:60px 40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.03);
+box-shadow:0 0 40px rgba(255,255,255,0.05);
+max-width:600px;
+}
 
-        .status {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #fff;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+h1{
+font-size:3rem;
+letter-spacing:2px;
+margin-bottom:10px;
+}
 
-        .status:hover {
-            background: #fff;
-            color: #000;
-        }
+h1 span{
+font-weight:300;
+}
 
-        footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
-            opacity: 0.4;
-        }
-    </style>
+.line{
+width:60px;
+height:2px;
+background:#fff;
+margin:20px auto;
+opacity:0.5;
+}
+
+p{
+font-size:1.1rem;
+opacity:0.7;
+margin-bottom:30px;
+}
+
+.status{
+display:inline-block;
+padding:10px 20px;
+border:1px solid #fff;
+border-radius:50px;
+font-size:0.9rem;
+letter-spacing:1px;
+transition:0.3s;
+}
+
+.status:hover{
+background:#fff;
+color:#000;
+}
+
+/* FOOTER */
+
+.footer{
+border-top:1px solid rgba(255,255,255,0.1);
+padding:40px 20px;
+}
+
+.footer-container{
+max-width:1000px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-section h3{
+font-size:16px;
+margin-bottom:15px;
+}
+
+.footer-section p{
+font-size:14px;
+opacity:0.8;
+margin:8px 0;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.footer-section a{
+color:#fff;
+text-decoration:none;
+opacity:0.7;
+transition:0.2s;
+}
+
+.footer-section a:hover{
+opacity:1;
+}
+
+.footer-section i{
+width:18px;
+text-align:center;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:30px;
+font-size:12px;
+opacity:0.4;
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>DROP<span>STYLE</span></h1>
-        <div class="line"></div>
-        <p>This website is currently under development. We are working diligently to complete it and will make every effort to launch it as soon as possible. Thank you for your patience and understanding.</p>
-        <div class="status">EN DESARROLLO</div>
-        <footer>© 2026 DropStyle</footer>
-    </div>
+<main>
+<div class="container">
+<h1>DROP<span>STYLE</span></h1>
+
+<div class="line"></div>
+
+<p>
+This website is currently under development. We are working diligently to complete it and will make every effort to launch it as soon as possible. Thank you for your patience and understanding.
+</p>
+
+<div class="status">EN DESARROLLO</div>
+</div>
+</main>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-section">
+<h3>Soporte</h3>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+<a href="mailto:soporte@dropstyle.space">
+soporte@dropstyle.space
+</a>
+</p>
+
+<p>
+<i class="fa-brands fa-whatsapp"></i>
+<a href="https://wa.me/34614890901" target="_blank">
++34 614 89 09 01
+</a>
+</p>
+
+</div>
+
+
+<div class="footer-section">
+<h3>Redes Sociales</h3>
+
+<p>
+<i class="fa-brands fa-tiktok"></i>
+<a href="https://www.tiktok.com/@dropstylesp" target="_blank">
+@dropstylesp
+</a>
+</p>
+
+<p>
+<i class="fa-brands fa-instagram"></i>
+<a href="https://instagram.com/dropstylesp" target="_blank">
+@dropstylesp
+</a>
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 DropStyle. Todos los derechos reservados.
+</div>
+
+</footer>
 
 </body>
 </html>
