@@ -7,7 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<!-- Iconos y Banderas -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 
@@ -112,7 +111,112 @@ letter-spacing:1px;
 text-align:center;
 font-size:1rem;
 opacity:0.5;
-margin-bottom:40px;
+margin-bottom:25px;
+}
+
+/* Bloque de Advertencia Desplegable */
+.payment-warning-box {
+background: rgba(241, 196, 15, 0.04);
+border: 1px solid rgba(241, 196, 15, 0.2);
+border-radius: 12px;
+padding: 20px 25px;
+margin-bottom: 40px;
+font-size: 0.9rem;
+line-height: 1.6;
+}
+
+.warning-header-action {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.payment-warning-box .warning-title {
+color: #f1c40f;
+opacity: 0.9;
+font-weight: 500;
+margin-bottom: 0;
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 0.95rem;
+}
+
+/* Botón Leer Todo / Ocultar */
+.toggle-warning-btn {
+background: transparent;
+border: 1px solid rgba(241, 196, 15, 0.4);
+color: #f1c40f;
+padding: 6px 16px;
+border-radius: 30px;
+cursor: pointer;
+font-size: 0.8rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: 0.3s ease;
+}
+
+.toggle-warning-btn:hover {
+background: rgba(241, 196, 15, 0.1);
+border-color: #f1c40f;
+}
+
+/* Contenido oculto por defecto */
+.warning-collapsible-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s ease-out, margin-top 0.4s ease;
+opacity: 0;
+}
+
+.warning-collapsible-content.show {
+max-height: 2000px; /* Suficiente espacio para el texto expandido */
+margin-top: 20px;
+opacity: 1;
+transition: max-height 0.6s ease-in, opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+.warning-collapsible-content ul {
+list-style: none;
+padding-left: 5px;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+gap: 12px;
+opacity: 0.85;
+margin-top: 15px;
+}
+
+@media(max-width: 880px) {
+    .warning-collapsible-content ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+.warning-collapsible-content ul li {
+position: relative;
+padding: 10px 12px 10px 24px;
+border-radius: 6px;
+background: rgba(255,255,255,0.01);
+border-left: 2px solid rgba(241, 196, 15, 0.3);
+}
+
+.warning-collapsible-content ul li::before {
+content: "•";
+color: #f1c40f;
+position: absolute;
+left: 10px;
+top: 8px;
+font-weight: bold;
+font-size: 1.1rem;
+}
+
+.warning-collapsible-content ul li strong {
+color: #fff;
+opacity: 0.95;
 }
 
 .category-section {
@@ -167,6 +271,578 @@ gap:10px;
 }
 
 .payment-name i {
+opacity:0.7;
+font-size:1.1rem;
+width:20px;
+text-align:center;
+}
+
+.badge {
+font-size:0.75rem;
+padding:4px 10px;
+border-radius:30px;
+font-weight:500;
+letter-spacing:0.5px;
+}
+
+.badge.success {
+background:rgba(46, 204, 113, 0.15);
+color:#2ecc71;
+border:1px solid rgba(46, 204, 113, 0.3);
+}
+
+.badge.warning {
+background:rgba(241, 196, 15, 0.15);
+color:#f1c40f;
+border:1px solid rgba(241, 196, 15, 0.3);
+}
+
+.badge.danger {
+background:rgba(231, 76, 60, 0.15);
+color:#e74c3c;
+border:1px solid rgba(231, 76, 60, 0.3);
+}
+
+.payment-info {
+font-size:0.85rem;
+opacity:0.6;
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.payment-info span {
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.payment-info span strong {
+color:#fff;
+opacity:0.8;
+}
+
+/* Banderas Circulares */
+.flag-circle {
+display:inline-block;
+width:16px;
+height:16px;
+border-radius:50% !important;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+transform:scale(1.1);
+}
+
+/* FOOTER */
+.footer{
+border-top:1px solid rgba(255,255,255,0.1);
+padding:40px 20px;
+}
+
+.footer-container{
+max-width:1000px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-section h3{
+font-size:16px;
+margin-bottom:15px;
+}
+
+.footer-section p{
+font-size:14px;
+opacity:0.8;
+margin:8px 0;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.footer-section a{
+color:#fff;
+text-decoration:none;
+opacity:0.7;
+transition:0.2s;
+}
+
+.footer-section a:hover{
+opacity:1;
+}
+
+.footer-section i{
+width:18px;
+text-align:center;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:30px;
+font-size:12px;
+opacity:0.4;
+}
+
+@media(max-width: 768px){
+    .payments-container {
+        padding: 25px 20px;
+    }
+    .payments-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+    <div class="container">
+        <h1>DROP<span>STYLE</span></h1>
+        <div class="line"></div>
+        <p>
+            This website is currently under development. We are working diligently to complete it and will make every effort to launch it as soon as possible. Thank you for your patience and understanding.
+        </p>
+        <div class="status">EN DESARROLLO</div>
+    </div>
+
+    <div class="payments-container">
+        <h2>Métodos de Pago en DropStyle</h2>
+        <p class="sub">Estado actual y disponibilidad de nuestras pasarelas de pago globales</p>
+
+        <div class="payment-warning-box">
+            <div class="warning-header-action">
+                <p class="warning-title"><i class="fa-solid fa-triangle-exclamation"></i> Nota aclaratoria sobre la disponibilidad dinámica en el checkout</p>
+                <button class="toggle-warning-btn" id="toggleWarningBtn" onclick="toggleWarningContent()">
+                    <span>Leer todo</span> <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+            
+            <div class="warning-collapsible-content" id="warningContent">
+                Que un método de pago figure con el estado <strong>"Habilitado"</strong> en este listado de control interno no implica que aparezca disponible de forma automática para todos los clientes en la pantalla final de pago. Su activación en tiempo real depende directamente de los siguientes factores concurrentes:
+                <ul>
+                    <li><strong>Divisa de la Transacción:</strong> Ciertos métodos de pago requieren obligatoriamente transaccionar en monedas locales específicas (ej. Pix solo opera en BRL, Kakao Pay en KRW o Bizum en EUR). Si la tienda cambia de divisa, la pasarela oculta la opción.</li>
+                    <li><strong>País de Facturación del Cliente:</strong> Las pasarelas de pago analizan los datos de localización introducidos por el cliente. Si el país seleccionado no coincide con la cobertura legal del procesador (como Klarna, que exige un mercado admitido), el método se bloquea.</li>
+                    <li><strong>Límites por Importe (Mínimos y Máximos):</strong> Sistemas de pago fraccionado (BNPL) como Klarna o Billie establecen parámetros monetarios estrictos en el carrito de compra (por ejemplo, compra mínima de 30€ o máxima de 1500€). Fuera de ese rango, la opción desaparece del checkout.</li>
+                    <li><strong>Geolocalización por Dirección IP:</strong> Para prevenir fraude por suplantación, los firewalls de pago validan si la IP geográfica del dispositivo del comprador coincide con el país de la tarjeta o del banco emisor. Discrepancias severas inhabilitan los métodos instantáneos.</li>
+                    <li><strong>Filtros de Riesgo de Stripe (Radar & Disputas):</strong> Si nuestra cuenta comercial de Stripe experimenta un incremento en el ratio de contracargos o reclamaciones (acercándose al umbral crítico del 1%), los algoritmos automatizados de Stripe aplican restricciones preventivas ocultando opciones de financiamiento (como Klarna) o wallets rápidas para mitigar el riesgo.</li>
+                    <li><strong>Hardware y Tipo de Dispositivo:</strong> Opciones móviles avanzadas como Apple Pay o Samsung Pay comprueban la presencia de chips de seguridad específicos (Secure Enclave) o billeteras configuradas de forma nativa en el terminal de navegación del cliente.</li>
+                    <li><strong>Compatibilidad de Navegadores Web:</strong> Ciertas wallets biométricas exigen un software compatible específico. Apple Pay requiere de forma mandatoria el navegador Safari (iOS/macOS), mientras que Google Pay ofrece mejor soporte bajo entornos Chromium (Chrome, Edge).</li>
+                    <li><strong>Historial Crediticio Invisible (Scoring de Riesgo):</strong> Al seleccionar opciones de financiación a plazos, las entidades financieras realizan una evaluación de solvencia automatizada en microsegundos. Si el comprador tiene un perfil crediticio de riesgo, el método le será denegado.</li>
+                    <li><strong>Políticas Internas del Procesador Central:</strong> Proveedores como Stripe o Adyen realizan auditorías de cumplimiento constantes sobre el stock. Si un producto infringe de manera temporal alguna de sus políticas específicas de mercado, limitan ciertas pasarelas de inmediato.</li>
+                    <li><strong>Sincronización de Servidores y Webhooks:</strong> Los métodos de pago en tiempo real requieren una conexión sin latencia entre DropStyle y la entidad externa. Si hay retrasos de comunicación en la API o caídas de red del proveedor del pago, el sistema oculta el método por seguridad.</li>
+                    <li><strong>Regulaciones Fiscales Locales y KYC:</strong> Determinados países imponen controles estrictos contra el blanqueo de capitales sobre ciertos métodos (como UPI en India o WeChat Pay en China). Cambios legislativos o auditorías de verificación de empresa pueden suspender la opción momentáneamente.</li>
+                    <li><strong>Conflictos entre Extensiones del Checkout:</strong> La coexistencia de plugins de e-commerce, sistemas de cálculo de envío en tiempo real o cupones de descuento complejos dentro del carrito puede alterar los metadatos enviados a la pasarela, forzando la desactivación del método de pago.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h3>Tarjetas</h3>
+            <div class="payments-grid">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-credit-card"></i> Tarjetas</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-credit-card"></i> Tarjetas coreanas</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Corea del Sur <span class="fi fi-kr flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-credit-card"></i> Cartes Bancaires</div>
+                        <span class="badge warning">Pendiente</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Francia <span class="fi fi-fr flag-circle"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h3>Monederos Digitales</h3>
+            <div class="payments-grid">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-brands fa-amazon-pay"></i> Amazon Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-brands fa-apple-pay"></i> Apple Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-brands fa-google-pay"></i> Google Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-brands fa-paypal"></i> PayPal</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-link"></i> Link</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-wallet"></i> Kakao Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Corea del Sur <span class="fi fi-kr flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-wallet"></i> Naver Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Corea del Sur <span class="fi fi-kr flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-wallet"></i> PAYCO</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Corea del Sur <span class="fi fi-kr flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-mobile-screen-button"></i> Samsung Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Corea del Sur <span class="fi fi-kr flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-mobile-screen-button"></i> MB WAY</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Portugal <span class="fi fi-pt flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-mobile-screen-button"></i> MobilePay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Dinamarca y Finlandia <span class="fi fi-dk flag-circle"></span> <span class="fi fi-fi flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-bolt"></i> Revolut Pay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Europa y Reino Unido <span class="fi fi-eu flag-circle"></span> <span class="fi fi-gb flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-wallet"></i> Satispay</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Italia <span class="fi fi-it flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-brands fa-alipay"></i> Alipay</div>
+                        <span class="badge warning">Aprobación Pendiente</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> China <span class="fi fi-cn flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-brands fa-weixin"></i> WeChat Pay</div>
+                        <span class="badge warning">Aprobación Pendiente</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> China <span class="fi fi-cn flag-circle"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h3>Adeudos Bancarios Autenticados</h3>
+            <div class="payments-grid">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-bank"></i> Bancontact</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Bélgica <span class="fi fi-be flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-money-bill-transfer"></i> BLIK</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Polonia <span class="fi fi-pl flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-bank"></i> EPS</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Austria <span class="fi fi-at flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-money-bill-transfer"></i> Przelewy24</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Polonia <span class="fi fi-pl flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-circle-exclamation"></i> iDEAL | Wero</div>
+                        <span class="badge warning">Acción de la Marca</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Países Bajos <span class="fi fi-nl flag-circle"></span></span>
+                        <span><strong>Detalle:</strong> Pendiente proporcionar información comercial</span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-bank"></i> TWINT</div>
+                        <span class="badge warning">Aprobación Pendiente</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Suiza <span class="fi fi-ch flag-circle"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h3>Pagos en Tiempo Real</h3>
+            <div class="payments-grid">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-mobile-button"></i> Bizum</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> España <span class="fi fi-es flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-bank"></i> Pay by Bank</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Finlandia y Reino Unido <span class="fi fi-fi flag-circle"></span> <span class="fi fi-gb flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-qrcode"></i> Pix</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Brasil <span class="fi fi-br flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-money-bill-transfer"></i> UPI</div>
+                        <span class="badge danger">No cumple requisitos</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> India <span class="fi fi-in flag-circle"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h3>Compra ahora y paga después</h3>
+            <div class="payments-grid">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-calendar-days"></i> Klarna</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Global <span class="fi fi-xx flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-calendar-days"></i> Billie</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Europa <span class="fi fi-eu flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-calendar-days"></i> Alma</div>
+                        <span class="badge danger">No cumple requisitos</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Región:</strong> Francia <span class="fi fi-fr flag-circle"></span></span>
+                        <span><strong>Motivo:</strong> Categoría de empresa no admitida (incluida en lista de exclusión de Alma)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h3>Efectivo, Adeudos y Transferencias</h3>
+            <div class="payments-grid">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-money-bill-wave"></i> Multibanco</div>
+                        <span class="badge success">Habilitado</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Tipo:</strong> Efectivo</span>
+                        <span><strong>Región:</strong> Portugal <span class="fi fi-pt flag-circle"></span></span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-building-columns"></i> Adeudo directo ACH</div>
+                        <span class="badge danger">Evaluación Estratégica</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Tipo:</strong> Adeudo bancario</span>
+                        <span><strong>Región:</strong> Estados Unidos <span class="fi fi-us flag-circle"></span></span>
+                        <span><strong>Estado:</strong> En proceso de evaluación interna formal</span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-building-columns"></i> Adeudo directo SEPA</div>
+                        <span class="badge danger">Evaluación Estratégica</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Tipo:</strong> Adeudo bancario</span>
+                        <span><strong>Región:</strong> Europa <span class="fi fi-eu flag-circle"></span></span>
+                        <span><strong>Estado:</strong> En proceso de evaluación interna formal</span>
+                    </div>
+                </div>
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <div class="payment-name"><i class="fa-solid fa-money-check-dollar"></i> Transferencias bancarias</div>
+                        <span class="badge danger">Evaluación Estratégica</span>
+                    </div>
+                    <div class="payment-info">
+                        <span><strong>Tipo:</strong> Transferencia</span>
+                        <span><strong>Región:</strong> Internacional <span class="fi fi-eu flag-circle"></span> <span class="fi fi-gb flag-circle"></span> <span class="fi fi-jp flag-circle"></span> <span class="fi fi-mx flag-circle"></span> <span class="fi fi-us flag-circle"></span></span>
+                        <span><strong>Estado:</strong> En proceso de evaluación interna formal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Soporte</h3>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:soporte@dropstyle.space">soporte@dropstyle.space</a></p>
+            <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/34614890901" target="_blank">+34 614 89 09 01</a></p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Redes Sociales</h3>
+            <p><i class="fa-brands fa-tiktok"></i> <a href="https://www.tiktok.com/@dropstylesp" target="_blank">@dropstylesp</a></p>
+            <p><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/dropstylesp" target="_blank">@dropstylesp</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 DropStyle. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script>
+function toggleWarningContent() {
+    const content = document.getElementById('warningContent');
+    const btn = document.getElementById('toggleWarningBtn');
+    
+    if (content.classList.contains('show')) {
+        // Ocultar contenido
+        content.classList.remove('show');
+        btn.innerHTML = '<span>Leer todo</span> <i class="fa-solid fa-chevron-down"></i>';
+    } else {
+        // Mostrar contenido
+        content.classList.add('show');
+        btn.innerHTML = '<span>Ocultar texto</span> <i class="fa-solid fa-chevron-up"></i>';
+    }
+}
+</script>
+
+</body>
+</html>
 opacity:0.7;
 font-size:1.1rem;
 width:20px;
